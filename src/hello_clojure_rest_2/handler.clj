@@ -6,7 +6,7 @@
             [ring.util.response :refer [response]]))
 
 (defroutes app-routes
-  (GET "/" [] "Hello World")
+  (GET "/" [] (wrap-json-response (fn [_] (response {:id 1 :message "hello"}) )))
   (route/not-found "Not Found"))
 
 (def app
