@@ -6,8 +6,10 @@
                  [compojure "1.3.1"]
                  [ring/ring-json "0.3.1"]
                  [ring/ring-defaults "0.1.2"]]
-  :plugins [[lein-ring "0.8.13"]]
+  :plugins [[lein-ring "0.8.13"]
+            [lein-expectations "0.0.8"]]
   :ring {:handler hello-clojure-rest-2.handler/app}
   :profiles
   {:dev {:dependencies [[javax.servlet/servlet-api "2.5"]
-                        [ring-mock "0.1.5"]]}})
+                        [ring-mock "0.1.5"]
+                        [expectations "2.0.9"]]}})
