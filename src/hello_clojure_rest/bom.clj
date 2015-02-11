@@ -1,4 +1,4 @@
-(ns hello-clojure-rest-2.bom)
+(ns hello-clojure-rest.bom)
 
 
 

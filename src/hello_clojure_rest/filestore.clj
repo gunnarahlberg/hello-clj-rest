@@ -1,6 +1,6 @@
 (ns
   ^{:doc "File database storage"}
-  hello-clojure-rest-2.filestore
+  hello-clojure-rest.filestore
 
   (:require [clojure.java.io :refer [file]]
             [clojure.edn :as edn]))
@@ -61,24 +61,24 @@
 
 
 (comment
-  (require ['hello-clojure-rest-2.filestore :as 'fs])
+  (require ['hello-clojure-rest.filestore :as 'fs])
 
 
 
                                         ; open database, may exist which will read it or not exist which will create it
-  (def db (fs/open "/tmp/friends"))
+  (def db (open "/tmp/friends"))
 
                                         ; save document
                                         ; stored in /tmp/friends/1/1
   (def alice
-    (fs/insert! db {:name "Alice"
+    (insert! db {:name "Alice"
                     :age 31
                     :interests #{:travel :friends :beauty}}))
 
                                         ; save document
                                         ; stored in /tmp/friends/2/1
   (def bob
-    (fs/insert! db {:name "Bob"
+    (insert! db {:name "Bob"
                     :age 29
                     :interests #{:technology :football :cars}}))
 
@@ -89,13 +89,13 @@
                                         ; update document
                                         ; stored in /tmp/friends/2/2
   (def bob2
-    (fs/update! db (:id (meta bob)) {:name "Bob"
+    (update! db (:id (meta bob)) {:name "Bob"
                                      :age 23
                                      :interests #{:technology :football :music}}))
 
   (println (meta bob2))                 ; => {:id 2 :rev 2}
 
                                         ; retrieve latest rev of a document
-  (def res (fs/find-one db (:id (meta bob2))))
+  (def res (find-one db (:id (meta bob2))))
   (println (:age  res ) )               ; => 23
   )
