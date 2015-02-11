@@ -1,9 +1,10 @@
-(ns hello-clojure-rest-2.handler
+(ns hello-clojure-rest.handler
   (:require [compojure.core :refer :all]
             [compojure.route :as route]
             [ring.middleware.defaults :refer [wrap-defaults site-defaults]]
             [ring.middleware.json :refer [wrap-json-response]]
             [ring.util.response :refer [response]])
+<<<<<<< HEAD:src/hello_clojure_rest_2/handler.clj
   )
 
 (defn create-db []
@@ -11,6 +12,9 @@
                                              [:customer :text]))
        (catch Exception e (println e))))
 
+=======
+  (:use     [korma.core]))
+>>>>>>> b9f3e6e72b24bb0d1ad45ef3bbf70783f42a3505:src/hello_clojure_rest/handler.clj
 
 (defroutes app-routes
   ;(GET "/q" [] (wrap-json-response (select quote )))

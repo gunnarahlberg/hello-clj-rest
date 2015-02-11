@@ -10,4 +10,7 @@ pom.xml.asc
 .lein-plugins/
 .lein-failures
 *.iml
+<<<<<<< HEAD
 /.idea
+=======
+>>>>>>> b9f3e6e72b24bb0d1ad45ef3bbf70783f42a3505
